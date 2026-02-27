@@ -2,7 +2,7 @@
 set -e
 echo "Building....."
 
-pip install zensical
+uv pip install zensical
 zensical build --clean
 
 echo "Build Complete"
