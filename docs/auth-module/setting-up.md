@@ -1,6 +1,6 @@
 # Setting Up
 
-In this day and age, your cannot ship a website with clunky feeling authentication. Your users deserve an email and password (standard, especially security conscious users who do not like linking accounts), sign-up and sign-in via magic links ( the growing favorite for its convenience) and social login options like Google, Meta, GitHub, etc. <br>
+In this day and age, you cannot ship a website with clunky feeling authentication. Your users deserve an email and password (standard, especially security conscious users who do not like linking accounts), sign-up and sign-in via magic links ( the growing favorite for its convenience) and social login options like Google, Meta, GitHub, etc. <br>
 
 This Auth module is going to help you get a secure authentication up and running efficiently  including pages/views that you can easily customize if you desire to.
 
@@ -18,7 +18,7 @@ This Auth module is going to help you get a secure authentication up and running
 
 ### Connect to a DB.
 
-First step to get authentication and authorization is to simply connect to a database to actually store our user data. Since ApexKit ships with the wonderful Better Auth. Nor you  are locked into any service like Okta or Clerk and neither you need to write roll-out your own authentication from scratch and spend your time writing hashing, salting and all the crucial pieces of authentication. \
+First step to get authentication and authorization is to simply connect to a database to actually store our user data. Since ApexKit ships with the wonderful Better Auth. You  are locked into any service like Okta or Clerk, nor do you need to write roll-out your own authentication from scratch and spend your time writing hashing, salting and all the crucial pieces of authentication. \
 \
 We will use Supabase here for our DB. But you can use any PostgreSQL solution like Neon, Aiven Cloud, or  Railway. &#x20;
 
@@ -113,8 +113,8 @@ export const account = pgTable("account", {
     .references(() => user.id, { onDelete: "cascade" }),
   providerId: text("provider_id").notNull(),
   providerAccountId: text("provider_account_id").notNull().default("none"),
-  access_token: text("access_token"),
-  refresh_token: text("refresh_token"),
+  accessToken: text("access_token"),
+  refreshToken: text("refresh_token"),
   idToken: text("id_token"),
   accessTokenExpiresAt: timestamp("access_token_expires_at"),
   refreshTokenExpiresAt: timestamp("refresh_token_expires_at"),
@@ -157,7 +157,7 @@ This kit has simple scripts to make easier for you to perform these operations.
     "db:migrate": "drizzle-kit migrate"
 ```
 
-Some familiarity with SQL and Relational Databases would be helpful here. But if you haven't worked with them before, it's okay. This kit will reduce overhead significantly and you can pick-it up as you go you would like to.
+Some familiarity with SQL and Relational Databases would be helpful here. But if you haven't worked with them before, it's okay. This kit will reduce overhead significantly and you can pick-it up as you go if you'd like to.
 
 Changes in your database schema are stored under "migrations". If you change anything in your schema, you need to make sure it is valid i.e it works well with existing database and doesn't break things. And all of our migrations are configured to store inside `db` directory.
 
@@ -165,7 +165,7 @@ We will primarily use `npm run db:gen` and `npm run db:migrate`. The command `np
 
 `npm run db:gen`  will check if you made any changes to your schema files compared to last migrations.
 
-`npm run db:migrate` will perform this migrations (changes) to your database safely. This can be anything like adding a new field or changing default value.
+`npm run db:migrate` will perform these migrations (changes) to your database safely. This can be anything like adding a new field or changing default value.
 
 After performing these two commands, you should  see tables created in your database.&#x20;
 
