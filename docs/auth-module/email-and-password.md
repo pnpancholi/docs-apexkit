@@ -8,7 +8,8 @@ If you have performed all the tasks successfully in the previous section, you al
 4. Update their profile information (if authenticated)
 5. Reset password
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-01-07 at 14-47-32 The Next Start-Up.png" alt=""><figcaption></figcaption></figure>
+![ApexKit Login Page](../assets/images/login-page-email.png)
+
 
 ***
 
