@@ -26,3 +26,5 @@ Let's get you started on your "next" venture.
 Voilà! That's all you need to get started.
 
 You should see something like this in your browser.
+
+![ApexKit](../assets/images/apexkit-landing.png)

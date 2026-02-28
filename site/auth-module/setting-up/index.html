@@ -992,8 +992,8 @@
                   
 
 <h1 id="setting-up">Setting Up<a class="headerlink" href="#setting-up" title="Permanent link">&para;</a></h1>
-<p>In this day and age, your can not ship a website with clunky feeling authentication. Your users deserve a email and password (standard, especially security conscious users who do not like linking accounts), sign-up and sign-in via magic links ( the growing favorite for its convenience) and social login options like Google, Meta, GitHub, etc. <br></p>
-<p>This Auth module is going to help you get a secure authentication up and running in efficiently  including pages/views that you can easily customize if you desire too.</p>
+<p>In this day and age, your cannot ship a website with clunky feeling authentication. Your users deserve an email and password (standard, especially security conscious users who do not like linking accounts), sign-up and sign-in via magic links ( the growing favorite for its convenience) and social login options like Google, Meta, GitHub, etc. <br></p>
+<p>This Auth module is going to help you get a secure authentication up and running efficiently  including pages/views that you can easily customize if you desire to.</p>
 <h3 id="what-comes-packed-in">What comes packed in ?<a class="headerlink" href="#what-comes-packed-in" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Email and Password authentication</li>
@@ -1005,14 +1005,14 @@
 <li>Crucial user interface (Sign In, Sign Up, Reset Password, Profile)</li>
 </ol>
 <h3 id="connect-to-a-db">Connect to a DB.<a class="headerlink" href="#connect-to-a-db" title="Permanent link">&para;</a></h3>
-<p>First step to get authentication and authorization is to simply connect to a database to actually store our user data. Since ApexKit ships with the wonder Better Auth, nor  you  are not locked into any service like Okta or Clerk and neither you need to write roll-out your own authentication from scratch and spend your time writing hashing, salting and all the crucial pieces of authentication. \
+<p>First step to get authentication and authorization is to simply connect to a database to actually store our user data. Since ApexKit ships with the wonderful Better Auth. Nor you  are locked into any service like Okta or Clerk and neither you need to write roll-out your own authentication from scratch and spend your time writing hashing, salting and all the crucial pieces of authentication. \
 \
 We will use Supabase here for our DB. But you can use any PostgreSQL solution like Neon, Aiven Cloud, or  Railway. &#x20;</p>
 <p><a href="https://supabase.com/docs/guides/database/connecting-to-postgres">https://supabase.com/docs/guides/database/connecting-to-postgres</a></p>
 <p _="%" endhint="endhint">{% hint style="warning" %}
 Note: We will use Supabase database, not Supabase Authentication</p>
 <ol>
-<li>Go to [Supabase] (<a href="https://supabase.com/">https://supabase.com/</a>)</li>
+<li>Go to <a href="../[https://supabase.com/](https://supabase.com/)">Supabase</a></li>
 <li>Create a free account.</li>
 <li>Set up your organization.&#x20;</li>
 <li>Then simply create a new database for your project. This will prompt you to create a new database with a password. Keep this password safe with you. On your header, you should see a <kbd>Connect</kbd> button.</li>
@@ -1033,16 +1033,16 @@ Heads Up: Make sure to swap the [Your-Password] with your actual password.</p>
 <ul>
 <li><code>DATABASE_URL</code>  This is your db connection string</li>
 <li><code>BETTER_AUTH_SECRET</code>   A secret phrase that better-auth will use for operations like hashing.</li>
-<li>EMAIL_API_KEY This will take care of sending emails for verification and magic links.</li>
+<li><code>EMAIL_API_KEY</code> This will take care of sending emails for verification and magic links.</li>
 </ul>
 <p>There is an example file aptly named <code>.env.example</code> . Just use those variable names in your development and production.</p>
-<p>You can see how to get the <code>DATABASE_URL</code> in the previous section. For <code>Better_AUTH_SECRET</code> , you can choose any word or phrase. Just make sure to keep it safe. And lastly, for your <code>EMAIL_API_KEY</code> , grab one from <a href="https://resend.com/">https://resend.com/</a>.</p>
+<p>You can see how to get the <code>DATABASE_URL</code> in the previous section. For <code>BETTER_AUTH_SECRET</code> , you can choose any word or phrase. Just make sure to keep it safe. And lastly, for your <code>EMAIL_API_KEY</code> , grab one from <a href="https://resend.com/">https://resend.com/</a>.</p>
 <p _="%" endhint="endhint">{% hint style="info" %}
 <a href="#user-content-fn-1">Note: This kit currently uses  Resend underneath for emails due to their generous free plan and affordable paid plans. </a>[^1]</p>
 <ol>
 <li>Understanding the schema</li>
 </ol>
-<p>This kit ships with a Better-Auth compatible authentication schema with user, session, account, verification tables.  You can modify this table and add as many fields according to your own restrictions and flexibility as long you provide the core fields that Better-Auth needs to help roll-out a secure authentication.</p>
+<p>This kit ships with a Better-Auth compatible authentication schema with user, session, account, verification tables.  You can modify this table and add as many fields according to your own restrictions and flexibility as long as you provide the core fields that Better-Auth needs to help roll-out a secure authentication.</p>
 <p>We store all of our database related code in aptly named directory <code>db</code></p>
 <p>You can take a quick peek at the <code>auth</code> schema here:</p>
 <p _="%" endcode="endcode">{% code expandable="true" %}
@@ -1054,7 +1054,7 @@ Heads Up: Make sure to swap the [Your-Password] with your actual password.</p>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">).</span><span class="nx">primaryKey</span><span class="p">(),</span><span class="w"> </span><span class="c1">//Better-Auth expects this.</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">().</span><span class="nx">unique</span><span class="p">(),</span><span class="w"> </span><span class="c1">// one account per email</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">emailVerified</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">(</span><span class="s2">&quot;email_verfied&quot;</span><span class="p">).</span><span class="k">default</span><span class="p">(</span><span class="kc">false</span><span class="p">),</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nx">emailVerified</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">(</span><span class="s2">&quot;email_verified&quot;</span><span class="p">).</span><span class="k">default</span><span class="p">(</span><span class="kc">false</span><span class="p">),</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nx">image</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">),</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nx">createdAt</span><span class="o">:</span><span class="w"> </span><span class="kt">timestamp</span><span class="p">(</span><span class="s2">&quot;created_at&quot;</span><span class="p">).</span><span class="nx">defaultNow</span><span class="p">().</span><span class="nx">notNull</span><span class="p">(),</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nx">updatedAt</span><span class="o">:</span><span class="w"> </span><span class="kt">timestamp</span><span class="p">(</span><span class="s2">&quot;updated_at&quot;</span><span class="p">).</span><span class="nx">defaultNow</span><span class="p">().</span><span class="nx">notNull</span><span class="p">(),</span>
@@ -1082,7 +1082,7 @@ Heads Up: Make sure to swap the [Your-Password] with your actual password.</p>
 </span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">  </span><span class="nx">providerId</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;provider_id&quot;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
 </span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">  </span><span class="nx">providerAccountId</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;provider_account_id&quot;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">().</span><span class="k">default</span><span class="p">(</span><span class="s2">&quot;none&quot;</span><span class="p">),</span>
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">  </span><span class="nx">access_token</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;access_token&quot;</span><span class="p">),</span>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">  </span><span class="nx">referesh_token</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;refresh_token&quot;</span><span class="p">),</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">  </span><span class="nx">refresh_token</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;refresh_token&quot;</span><span class="p">),</span>
 </span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">  </span><span class="nx">idToken</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;id_token&quot;</span><span class="p">),</span>
 </span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">  </span><span class="nx">accessTokenExpiresAt</span><span class="o">:</span><span class="w"> </span><span class="kt">timestamp</span><span class="p">(</span><span class="s2">&quot;access_token_expires_at&quot;</span><span class="p">),</span>
 </span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">  </span><span class="nx">refreshTokenExpiresAt</span><span class="o">:</span><span class="w"> </span><span class="kt">timestamp</span><span class="p">(</span><span class="s2">&quot;refresh_token_expires_at&quot;</span><span class="p">),</span>
@@ -1093,7 +1093,7 @@ Heads Up: Make sure to swap the [Your-Password] with your actual password.</p>
 </span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="p">});</span>
 </span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>
 </span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">verificationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pgTable</span><span class="p">(</span><span class="s2">&quot;verification_table&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">  </span><span class="nx">indentifier</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;identifier&quot;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">  </span><span class="nx">identifier</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;identifier&quot;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
 </span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">  </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="kt">text</span><span class="p">(</span><span class="s2">&quot;token&quot;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
 </span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">  </span><span class="nx">expires</span><span class="o">:</span><span class="w"> </span><span class="kt">timestamp</span><span class="p">(</span><span class="s2">&quot;expires&quot;</span><span class="p">).</span><span class="nx">notNull</span><span class="p">(),</span>
 </span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="p">});</span>
@@ -1111,21 +1111,21 @@ Heads Up: Make sure to swap the [Your-Password] with your actual password.</p>
 </ol>
 <p>The ApexKit uses two libraries to make authentication work without vendor lock-ins. Better-Auth library to give us all the authentication features like email and password, magic links, sessions, two-factor authentication and much more. And then we use Drizzle to actually talk to our database and store information in it. \
 \
-In order to move forwards, once you have settled on you <code>auth</code> schema (stick to the default or update according to your needs), we need to validate and push it to our database.\
+In order to move forwards, once you have settled on your <code>auth</code> schema (stick to the default or update according to your needs), we need to validate and push it to our database.\
 \
 You have your database, but it needs tables, relational mapping, restrictions etc. You may even need to update this later on after you have already stored some user data. We can do all of this with drizzle-kit.\
 \
-This kit have simple scripts to make easier for you to perform these operations.</p>
+This kit has simple scripts to make easier for you to perform these operations.</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// package json</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;db:gen&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;drizzle-kit generate&quot;</span><span class="p">,</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;db:push&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;drizzle-kit push&quot;</span><span class="p">,</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;db:migrate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;drizzle-kit migrate&quot;</span>
 </span></code></pre></div>
-<p>Some familiarity with SQL and Relational Databases would be helpful here. But if you haven't worked with them before, its okay. This kit will reduce overhead significantly and you can pick-it as you go you would like to.</p>
+<p>Some familiarity with SQL and Relational Databases would be helpful here. But if you haven't worked with them before, it's okay. This kit will reduce overhead significantly and you can pick-it up as you go you would like to.</p>
 <p>Changes in your database schema are stored under "migrations". If you change anything in your schema, you need to make sure it is valid i.e it works well with existing database and doesn't break things. And all of our migrations are configured to store inside <code>db</code> directory.</p>
-<p>We will primarily use <code>npm run db:gen</code> and <code>npm run db: migrate</code>. The command <code>npm run db:push</code> is only used during testing but not ideal for production.&#x20;</p>
-<p><code>npm run db: gen</code>  will check if you made any changes to your schema files compared to last migrations.</p>
-<p><code>npm run db: migrate</code> will perform this migrations (changes) to your database safely. This can be anything like adding a new field or changing default value.</p>
+<p>We will primarily use <code>npm run db:gen</code> and <code>npm run db:migrate</code>. The command <code>npm run db:push</code> is only used during testing but not ideal for production.&#x20;</p>
+<p><code>npm run db:gen</code>  will check if you made any changes to your schema files compared to last migrations.</p>
+<p><code>npm run db:migrate</code> will perform this migrations (changes) to your database safely. This can be anything like adding a new field or changing default value.</p>
 <p>After performing these two commands, you should  see tables created in your database.&#x20;</p>
 <p _="%" endhint="endhint">{% hint style="success" %}
 Congratulations! You just setup your project with a working authentication. And you did that efficiently.</p>
