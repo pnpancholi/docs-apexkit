@@ -54,6 +54,12 @@ nav=[
     {"Built-in Themes" = "ui-module/built-in-themes.md"},
     {"Making Your Custom Theme" = "ui-module/custom-themes.md"},
   ]},
+  {"Database Module" = [
+    {"Configuration" = "db-module/configuration.md"},
+    {"Creating a New Schema" = "db-module/creating-a-new-schema.md"},
+    { "Updating Your Hosted Database" = "db-module/updating-db.md"},
+    {"Updating Your Schema" = "db-module/updating-schema.md"},
+  ]},
 ]
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
@@ -287,7 +293,6 @@ scheme = "slate"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to light mode"
 
-# ----------------------------------------------------------------------------
 # In the "font" subsection you can configure the fonts used. By default, fonts
 # are loaded from Google Fonts, giving you a wide range of choices from a set
 # of suitably licensed fonts. There are options for a normal text font and for
