@@ -60,6 +60,7 @@ nav=[
     { "Updating Your Hosted Database" = "db-module/updating-db.md"},
     {"Updating Your Schema" = "db-module/updating-schema.md"},
   ]},
+  {"Support" = "support.md"},
 ]
 
 # Zensical supports both implicit navigation and explicitly defined navigation.

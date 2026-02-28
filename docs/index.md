@@ -18,7 +18,7 @@ ApexKit gives you the best of both worlds: the velocity of indie hacking and the
 #### What’s inside
 
 * **Next.js 15** (App Router + React Server Components)
-* **Drizzle ORM** : type-safe, SQL, and flexible enough to works with database solution of your choice.&#x20;
+* **Drizzle ORM** : type-safe, SQL, and flexible enough to work with database solution of your choice.&#x20;
 * **Tailwind CSS + DaisyUI** – beautiful and accessible UI out of the box
 * **Better Auth** : Fine-tuned, vendor-agnostic authentication
 * Full **TypeScript** support
@@ -43,7 +43,7 @@ That same spectrum exists when choosing a starter kit. Being opinionated isn’t
 
 #### Safety Through Familiarity
 
-Deep knowledge of a tool-set lets you anticipate its pitfalls and edge cases. A JavaScript developer who understands where Node.JS can be notorious for memory leaks is just as safe as a seasoned Rust engineer who knows the same about their language (yes, you can still leak memory in Rust). Strong opinions come from real-world experience. They act as guardrails that keep most projects secure and stable by default.
+Deep knowledge of a tool-set lets you anticipate its pitfalls and edge cases. A JavaScript developer who understands where Node.js can be notorious for memory leaks is just as safe as a seasoned Rust engineer who knows the same about their language (yes, you can still leak memory in Rust). Strong opinions come from real-world experience. They act as guardrails that keep most projects secure and stable by default.
 
 #### Speed That Actually Ships Products
 
@@ -64,17 +64,18 @@ I wouldn’t reach for an experimental stack when helping a friend launch a plat
     * Vendor lock-in because migrating later costs more in time and opportunity than staying stuck
 
     With Drizzle, you own your schema and queries. You stay portable, type-safe, and in full control — no surprises when your project takes off.&#x20;
+
 2.  TypeScript
 
     Many developers have a love-hate relationship with JavaScript’s type system. You can go fully untyped, use JSDoc, or embrace TypeScript in various ways. ApexKit chooses full TypeScript because it can be adopted progressively, catches entire classes of bugs at compile time, and dramatically reduces runtime crashes.
 
 3. Better Auth
 
-    Authentications and authorization are among the most crucial parts of any application. You need both and they need to be secure. With Better Auth, we get to roll a secure authentication system without being stuck with a vendor. We can own our data, set up backups that fit the business needs, and focus on building meaningful features. 
+    Authentication and authorization are among the most crucial parts of any application. You need both and they need to be secure. With Better Auth, we get to roll a secure authentication system without being stuck with a vendor. We can own our data, set up backups that fit the business needs, and focus on building meaningful features. 
 
-    And with ApexKit, you do not have to worry about setting it up from scratch. All you have to do is provide a database connection, and you have a working authentication with sign-up, sign-in, reset password, email verification, magic links and even your transaction emails. And you can always extend for OTPs and two-factor authentication easily with Better Auth.
+    And with ApexKit, you do not have to worry about setting it up from scratch. All you have to do is provide a database connection, and you have a working authentication with sign-up, sign-in, reset password, email verification, magic links and even your transactional emails. And you can always extend for OTPs and two-factor authentication easily with Better Auth.
 
 4. Stability
 
-    Apexkit is built for stability, and easy management. Refactoring doesn't need to break everything. Stability means being battle-tested and having the flexibility to evolve. Just like JavaScript, there are new UI frameworks being launched every day. But we use Tailwind CSS and DaisyUI to keep the project stable. You get a solid community, flexibility to build your own components with Tailwind, and speed of DaisyUI to get started quick. You get the stability of Better Auth's battle-tested auth system, flexibility of owning your data, and speed of Better Auth plugins to add more security features.
+    ApexKit is built for stability, and easy management. Refactoring doesn't need to break everything. Stability means being battle-tested and having the flexibility to evolve. Just like JavaScript, there are new UI frameworks being launched every day. But we use Tailwind CSS and DaisyUI to keep the project stable. You get a solid community, flexibility to build your own components with Tailwind, and speed of DaisyUI to get started quick. You get the stability of Better Auth's battle-tested auth system, flexibility of owning your data, and speed of Better Auth plugins to add more security features.
 
