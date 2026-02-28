@@ -33,16 +33,15 @@ Note: We will use Supabase database, not Supabase Authentication
 3. Set up your organization.&#x20;
 4. Then simply create a new database for your project. This will prompt you to create a new database with a password. Keep this password safe with you. On your header, you should see a <kbd>Connect</kbd> button.
 
-<figure><img src="../.gitbook/assets/supabase-connect.png" alt=""><figcaption></figcaption></figure>
+![Supabase Connect](../assets/images/supabase-connect.png)
 
-\
 5\. Get a connection string (that works with both IPv6 and IPv4)
 
 {% hint style="danger" %}
 Important: We recommend using <kbd>Transaction Pooler</kbd> because Supabase uses IPv6 by default. And you might need IPv4 depending on where you are from. This is a way to avoid dealing with connection issues.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/supabase-connection-pooler.png" alt=""><figcaption></figcaption></figure>
+![IP4 Connection](../assets/images/supabase-connection-pooler.png)
 
 Your connection string should look something like this.\
 `postgresql://postgres.ivsfigwmvncndjncbgsz:[YOUR-PASSWORD]@aws-1-ap-southeast-1.pooler.supabase.com:6543/postgres`
