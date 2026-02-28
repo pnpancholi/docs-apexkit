@@ -18,7 +18,7 @@ This Auth module is going to help you get a secure authentication up and running
 
 ### Connect to a DB.
 
-First step to get authentication and authorization is to simply connect to a database to actually store our user data. Since ApexKit ships with the wonderful Better Auth. You  are locked into any service like Okta or Clerk, nor do you need to write roll-out your own authentication from scratch and spend your time writing hashing, salting and all the crucial pieces of authentication. \
+First step to get authentication and authorization is to simply connect to a database to actually store our user data. Since ApexKit ships with the wonderful Better Auth. You  are not locked into any service like Okta or Clerk, nor do you need to write roll-out your own authentication from scratch and spend your time writing hashing, salting and all the crucial pieces of authentication. \
 \
 We will use Supabase here for our DB. But you can use any PostgreSQL solution like Neon, Aiven Cloud, or  Railway. &#x20;
 
