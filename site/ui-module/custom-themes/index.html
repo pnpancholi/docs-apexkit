@@ -582,6 +582,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Making Your Custom Theme
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="././" class="md-nav__link md-nav__link--active">
         
   
@@ -598,6 +616,37 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -813,6 +862,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -875,6 +943,75 @@
                   
 
 <h1 id="daisy-ui-buildinig-custom-themes">Daisy UI: Buildinig Custom Themes<a class="headerlink" href="#daisy-ui-buildinig-custom-themes" title="Permanent link">&para;</a></h1>
+<p>As your project grows, its natural work on branding and customization. In addition to performance and a good user experience, an identity is important. With Daisy UI, you can easily create a custom theme to match the look and feel of your brand progressively.</p>
+<p>Once you have settled on your colors and typography for the theme. You can add them in your <code>global.css</code> file. Make sure to import libraries in the correct order.</p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;tailwindcss&quot;</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">@</span><span class="k">plugin</span><span class="w"> </span><span class="s2">&quot;daisyui&quot;</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">@</span><span class="k">plugin</span><span class="w"> </span><span class="s2">&quot;daisyui/theme&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mytheme&quot;</span><span class="o">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">default</span><span class="o">:</span><span class="w"> </span><span class="nt">true</span><span class="o">;</span><span class="w"> </span><span class="c">/* set as default */</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">prefersdark</span><span class="o">:</span><span class="w"> </span><span class="nt">false</span><span class="o">;</span><span class="w"> </span><span class="c">/* set as default dark mode (prefers-color-scheme:dark) */</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">color-scheme</span><span class="o">:</span><span class="w"> </span><span class="nt">light</span><span class="o">;</span><span class="w"> </span><span class="c">/* color of browser-provided UI */</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">--color-base-100</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">98</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">02</span><span class="w"> </span><span class="nt">240</span><span class="o">);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">--color-base-200</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">95</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">03</span><span class="w"> </span><span class="nt">240</span><span class="o">);</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">--color-base-300</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">92</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">04</span><span class="w"> </span><span class="nt">240</span><span class="o">);</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">--color-base-content</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">20</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">05</span><span class="w"> </span><span class="nt">240</span><span class="o">);</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">--color-primary</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">55</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">3</span><span class="w"> </span><span class="nt">240</span><span class="o">);</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nt">--color-primary-content</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">98</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">01</span><span class="w"> </span><span class="nt">240</span><span class="o">);</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nt">--color-secondary</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">70</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">25</span><span class="w"> </span><span class="nt">200</span><span class="o">);</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="nt">--color-secondary-content</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">98</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">01</span><span class="w"> </span><span class="nt">200</span><span class="o">);</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nt">--color-accent</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">65</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">25</span><span class="w"> </span><span class="nt">160</span><span class="o">);</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="nt">--color-accent-content</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">98</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">01</span><span class="w"> </span><span class="nt">160</span><span class="o">);</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="nt">--color-neutral</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">50</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">05</span><span class="w"> </span><span class="nt">240</span><span class="o">);</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="nt">--color-neutral-content</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">98</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">01</span><span class="w"> </span><span class="nt">240</span><span class="o">);</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="nt">--color-info</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">70</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">2</span><span class="w"> </span><span class="nt">220</span><span class="o">);</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="nt">--color-info-content</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">98</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">01</span><span class="w"> </span><span class="nt">220</span><span class="o">);</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="nt">--color-success</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">65</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">25</span><span class="w"> </span><span class="nt">140</span><span class="o">);</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="nt">--color-success-content</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">98</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">01</span><span class="w"> </span><span class="nt">140</span><span class="o">);</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">  </span><span class="nt">--color-warning</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">80</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">25</span><span class="w"> </span><span class="nt">80</span><span class="o">);</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span><span class="nt">--color-warning-content</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">20</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">05</span><span class="w"> </span><span class="nt">80</span><span class="o">);</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">  </span><span class="nt">--color-error</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">65</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">3</span><span class="w"> </span><span class="nt">30</span><span class="o">);</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">  </span><span class="nt">--color-error-content</span><span class="o">:</span><span class="w"> </span><span class="nt">oklch</span><span class="o">(</span><span class="nt">98</span><span class="o">%</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">01</span><span class="w"> </span><span class="nt">30</span><span class="o">);</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">  </span><span class="c">/* border radius */</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">  </span><span class="nt">--radius-selector</span><span class="o">:</span><span class="w"> </span><span class="nt">1rem</span><span class="o">;</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">  </span><span class="nt">--radius-field</span><span class="o">:</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">25rem</span><span class="o">;</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">  </span><span class="nt">--radius-box</span><span class="o">:</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">5rem</span><span class="o">;</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">  </span><span class="c">/* base sizes */</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">  </span><span class="nt">--size-selector</span><span class="o">:</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">25rem</span><span class="o">;</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">  </span><span class="nt">--size-field</span><span class="o">:</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">25rem</span><span class="o">;</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">  </span><span class="c">/* border size */</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">  </span><span class="nt">--border</span><span class="o">:</span><span class="w"> </span><span class="nt">1px</span><span class="o">;</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">  </span><span class="c">/* effects */</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">  </span><span class="nt">--depth</span><span class="o">:</span><span class="w"> </span><span class="nt">1</span><span class="o">;</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">  </span><span class="nt">--noise</span><span class="o">:</span><span class="w"> </span><span class="nt">0</span><span class="o">;</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The best part? You can do this progressively. And Daisy UI enables you to customize it throughly. You can customize</p>
+<ol>
+<li>
+<p>Existing themes - Maybe you like a theme and just wanna change it fonts or a specific color. Or maybe just a different hue.</p>
+</li>
+<li>
+<p>Custom components - Use uitlity classes to create your own components with the touch and feel of your own choices.</p>
+</li>
+<li>
+<p>Creating your own custom theme - As we have seen above, it is that easy to implement your own theme.</p>
+</li>
+</ol>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Customizing your components: <a href="https://daisyui.com/docs/customize/">https://daisyui.com/docs/customize/</a></p>
+</li>
+<li>
+<p>Creating a custom theme: <a href="https://daisyui.com/docs/themes/">https://daisyui.com/docs/themes/</a></p>
+</li>
+</ol>
 
 
 
